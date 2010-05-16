@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="parent_directory">/sdcard/droidproxy/</string>
+<string name="cache_directory">cache/</string>
+<string name="log_directory">log/</string>
+</resources>

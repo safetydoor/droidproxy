@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Välkommen till droidProxy. Fortsätt med nedan för att komma igång.\n1) Gå till Inställningar (För Android). \n2) Välj "Trådlösa styrenheter".\n3) Välj "Inställningar för mobilt nätverk".\n4) Välj "Åtkomstpunktnamn".\n5) Skriv ner vilka inställningar din nuvarande APN har.\n6) Välj nu att skapa en ny APN (Skriv in alla inställningar som din nuvarande APN har, förutom namn där du fördelaktigen skriver något med proxy).\n7) Ange "127.0.0.1" under rubriken "Proxy" och "8080" under rubriken "Port".\n8) Glöm inte att spara dina inställningar!\n9) Välj nu din nyligen skapade APN genom att klicka i radio-knappen brevid namnet. \n10) Starta nu din inbyggda webbläsare, har du gjort rätt bör du mötas av ett välkomst meddelande :)</string>
+    <string name="hello">Hello World, DroidProxy!</string>
+    <string name="app_name">DroidProxy</string>
+
+</resources>

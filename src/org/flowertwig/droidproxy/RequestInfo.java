@@ -57,14 +57,18 @@ public class RequestInfo {
 		try {
 			Log.i("droidProxy", "Before Parse.avaliable");
 
-			DebugHandler.WriteLog("*** Start reading incomming data.");
-
+			DebugHandler.WriteLog("*** Start reading incomming data. Size: " + inputStream.available());
+			if(inputStream.available() <= 0)
+			{
+				DebugHandler.WriteLog("We have gotten an inputstream with no data. What to do?");
+				return null;
+			}
 			int loopIndex = 0;
 			while(true)
 			{
 				available = inputStream.read(buffer, 0, HEADER_BUFFER_SIZE);
 				
-				if (available == -1)
+				if (available <= 0)
 				{
 					DebugHandler.WriteLog("*** No more data to receive on connection.");
 					Log.i("droidProxy", "Done Parse.avaliable");

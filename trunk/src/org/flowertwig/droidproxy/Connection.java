@@ -116,10 +116,12 @@ public class Connection implements Runnable {
 			inStream = new BufferedInputStream(_localSocket.getInputStream(), BUFFER_SIZE);
 			outStream = _localSocket.getOutputStream();
 			
+			RequestInfo req = RequestInfo.Parse(inStream);
+			
 			while (_localSocket.isConnected())
 			{
 				boolean shouldSendRequest = true;
-				RequestInfo req = RequestInfo.Parse(inStream);
+				
 				if (req == null || !req.isValid())
 				{
 					// Something went terrible wrong. Close connection 
@@ -127,8 +129,10 @@ public class Connection implements Runnable {
 					shouldSendRequest = false;
 					
 					DebugHandler.WriteLog("*** No valid request for this connection.");
+					
+					throw new IOException();
 
-					// TODO: Add HTTP Error response (5xx).
+					// TODO: Add HTTP Error response (5xx) instead of just throwing an exception
 				}
 				else
 				{
